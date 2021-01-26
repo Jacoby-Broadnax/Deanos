@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeanO's Seafood</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">   
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
+
+
+<script type="text/javascript">
+  $(document).ready(function () {
+      $.getJSON('https://api.sheety.co/1c0174d5b32dbebdf6f1e14d6ba67a4f/ultimateAnimeShowdown/news', function (data) {
+          var template = Handlebars.compile($('#item-template7').html())
+          $('#menu').html(template(data.products))
+      })
+  })
+</script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="">Home</a></li>
+                <li><a href="">Order Now</a></li>
+                <li><a href="">Our Menu</a></li>
+                <li><a href="">Contact Us</a></li>
+            </ul>
+
+            <div class="logo-fixed">
+                <div class="logo-container">
+                    <img src="Branding/logo.png">
+                </div>
+            </div>
+           
+
+            <div class="right-nav">
+                <a href=""><h3>(228) 342-5477</h3></a>
+
+                <div class="social">
+                    <img src="branding/facebook.png">
+                    <p>FaceBook</p>
+                </div>
+            </div>
+        </nav>
+
+        <div class="pane-wrapper">
+            <div class="center-pane">
+                <p>Raw Shrimp · Red Fish · Flounder · Grouper · Crab</p>
+                <div class="head-wrap">
+                    <h1>DeanO's Seafood Delivered</h1>
+                </div>
+               
+                <div class="button-container">
+                    <a href="">
+                        <button class="button">Order Now</button>
+                    </a>
+                    <a href="">
+                        <button class="button secondary">Contact Us</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <img class="banner" src="Assets/shrimp.png">
+    </header>
+
+    <div class="menu">
+
+
+<div class="menu-container">
+    <div class="left-menu">
+<img src="Assets/shrimp image.png">
+<div class="left-menu-text">
+<img src="Assets/logo first text.png">
+<h2>SHRIMP</h2>
+</div>
+    </div> 
+    <div class="right-menu">
+        <div class="price-item active-open">
+            <div class="popular active">
+                <img src="Assets/popular.png">
+            </div>   
+            <h3>Placeholder Text</h3>
+            <p>Lorem ipsum dolor sit amet, </p>
+            <h5>$00.00</h5>
+        </div>
+
+        <div class="price-item">
+            <div class="popular">
+                <img src="Assets/popular.png">
+            </div>   
+            <h3>Placeholder Text</h3>
+            <p>Lorem ipsum dolor sit amet, </p>
+            <h5>$00.00</h5>
+        </div>
+
+        <div class="price-item">
+            <div class="popular">
+                <img src="Assets/popular.png">
+            </div>   
+            <h3>Placeholder Text</h3>
+            <p>Lorem ipsum dolor sit amet, </p>
+            <h5>$00.00</h5>
+        </div>
+
+        <div class="price-item">
+            <div class="popular">
+                <img src="Assets/popular.png">
+            </div>   
+            <h3>Placeholder Text</h3>
+            <p>Lorem ipsum dolor sit amet, </p>
+            <h5>$00.00</h5>
+        </div>
+    </div>  
+</div>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+*{margin: 0px; padding: 0px;  font-family: "Open Sans";}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+
+nav {position: absolute; width: 100%; top: 0px; left: 0px;;}
+
+a {text-decoration: none;}
+
+.nav-list {margin-top: 35px;margin-left: 45px;}
+
+.nav-list > li {display: inline-block;margin-left: 20px;}
+
+.nav-list > li > a {color: white;font-size: 17px;text-decoration: none;}
+
+.banner {position: absolute;top: 0px; left: 0px; width: 100%;height: 60vh;z-index: -1;object-fit: cover;}
+
+.logo-fixed {position: absolute; left: 0px; top: 0px; width: 100%;;}
+
+.logo-container > img {width: 100%;}
+
+.logo-container {margin: auto; width: 122px;
+    margin-top: 5px;}
+
+.right-nav {position: absolute;right: 35px;width:333px;margin-top: -29px;}
+
+.right-nav > a > h3 {float: left;;color: white;padding-top: 10px;margin-right: 25px;}
+
+.social {float: left;}
+
+.social > img {display: inline-block;;}
+
+.social > p {    display: inline-block;
+    margin-top: 10px;
+    float: right;
+    margin-left: 11px;
+    color: white;}
+
+header {height: 60vh;}
+
+.pane-wrapper {margin: auto; width: 93%;margin-top: 101px;height: 42vh;}
+
+.center-pane {width: 100%; background-color: #4879beb4;height: 100%;}
+
+.center-pane > p {width: 100%; text-align: center;padding-top: 70px;color: white;}
+
+.head-wrap > h1 {width: 100%; text-align: center;color: white;    font-size: 72px;
+    line-height: 83px;}
+
+    
+
+.head-wrap {width: 617px;background-color:transparent;margin: auto;}
+
+.button {margin-right: 10px;padding: 12px;font-size: 17px;color: #487ABE;background-color: white; border: none;border-radius: 0px;font-weight: 600;border: solid 2px white;padding-left: 21px; padding-right: 21px;cursor: pointer;}
+
+.secondary {border: solid 2px white; background-color: transparent;color: white;margin-right: 0px;}
+
+.button-container {margin: auto; width: fit-content;padding-top: 8px;}
+
+/*--------------------------------------------Menu-------------------------------------*/
+
+.left-menu-text {background-color: #4879bebd;width: 356px;height: 192px;vertical-align: bottom;position: relative;margin-top: -230px;margin-left: 40px;}
+
+.left-menu-text > img {width: 111px;margin-bottom: -15px;margin-top: 70px;margin-left: 30px;}
+
+.left-menu-text > h2 {font-size: 53px;color: white;font-weight: 600;margin-left: 30px;}
+
+.left-menu > img {width: 651px; height: 419px;filter: brightness(0.7);}
+
+.left-menu {float: left;}
+
+.right-menu {width: 750px;float: left;margin-top: 50px;}
+
+.price-item {width: 306px; background-color: ;display: inline-block;padding-top: 20px; padding-bottom: 20px;margin-bottom: 45px;margin-left: 45px;}
+
+.price-item > h3 {text-align: center;}
+
+.price-item > p {text-align: center;}
+
+.price-item > h5 {text-align: center;}
+
+.price-item > img {width:95px}
+
+.menu-container {margin: auto; width: fit-content;}
+
+.popular > img {width: 95px;;}
+
+.popular {margin: auto; width: fit-content;display: none;}
+
+.active {display: block;}
+
+.active-open {background-color: rgb(240, 240, 240);}
+
+.menu {margin-top: -53px;}
