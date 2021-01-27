@@ -6,7 +6,7 @@ nav {position: absolute; width: 100%; top: 0px; left: 0px;;}
 
 a {text-decoration: none;}
 
-.nav-list {margin-top: 35px;margin-left: 45px;}
+.nav-list {margin-top: 35px;margin-left: 45px;position: relative;z-index: 15;}
 
 .nav-list > li {display: inline-block;margin-left: 20px;}
 
@@ -113,3 +113,33 @@ header {height: 60vh;}
         position: absolute;
     
         margin-top: -282px;}
+        @media screen and (max-width: 1440px){
+.nav-list {display: none;}
+.pane-wrapper {width: 100%; margin-top: 0px;height: 60vh;}
+
+.center-pane > .button-container {display: none;}
+.head-wrap {display: none;}
+
+.center-pane > p {display: none;}
+.right-nav {position: static;}
+
+.right-nav-wrapper {margin: auto; width: 261px;margin-top: 150px;}
+
+.right-nav > a > h3 {font-size: 15px;}
+
+.pane-wrapper {height: 184px;}
+
+header {height: 184px;}
+
+.banner {height: 184px;}
+
+.menu-container {width: 633px;}
+
+.menu-img {width: 100%;}
+
+.menu {margin-top: 16px;}
+
+.vertical-bar {display: none;}
+
+.right-menu {margin-left: -48px;}
+        }
