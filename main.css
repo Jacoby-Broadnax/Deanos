@@ -58,19 +58,26 @@ header {height: 60vh;}
 
 /*--------------------------------------------Menu-------------------------------------*/
 
-.left-menu-text {background-color: #4879bebd;width: 356px;height: 192px;vertical-align: bottom;position: relative;margin-top: -230px;margin-left: 40px;}
+.left-menu-text {background-color: #4879bebd;width: 356px;height: 192px;vertical-align: bottom;position: relative;    margin-top: -327px;
+    margin-left: 40px;
+    margin-bottom: 29px;
+}
 
 .left-menu-text > img {width: 111px;margin-bottom: -15px;margin-top: 70px;margin-left: 30px;}
 
-.left-menu-text > h2 {font-size: 53px;color: white;font-weight: 600;margin-left: 30px;}
+.left-menu-text > h2 {font-size: 53px;color: white;font-weight: 600;margin-left: 30px;text-transform: uppercase;}
 
-.left-menu > img {width: 651px; height: 419px;filter: brightness(0.7);}
+.left-menu > img {}
 
-.left-menu {float: left;}
+.menu-img {width: 651px; height: 419px;filter: brightness(0.7);margin-bottom: 104px;}
 
-.right-menu {width: 750px;float: left;margin-top: 50px;}
+.left-menu {margin-top: 4px}
 
-.price-item {width: 306px; background-color: ;display: inline-block;padding-top: 20px; padding-bottom: 20px;margin-bottom: 45px;margin-left: 45px;}
+.menu-container {height: 339px;}
+
+.right-menu {width: 750px;float: left;margin-top: 73px;margin-top: 85px;}
+
+.price-item {width: 306px; display: inline-block;padding-top: 20px; padding-bottom: 20px;margin-bottom: 45px;margin-left: 45px;}
 
 .price-item > h3 {text-align: center;}
 
@@ -80,7 +87,7 @@ header {height: 60vh;}
 
 .price-item > img {width:95px}
 
-.menu-container {margin: auto; width: fit-content;}
+.menu-container {margin: auto; width: fit-content;margin-bottom: 150px;}
 
 .popular > img {width: 95px;;}
 
@@ -90,4 +97,11 @@ header {height: 60vh;}
 
 .active-open {background-color: rgb(240, 240, 240);}
 
-.menu {margin-top: -53px;}
+.menu {position: relative;
+    margin-top: -68px;;}
+
+    .parallax-container {
+       height: 500px;
+    }
+
+    .top {margin-top: -12px;position: relative;}

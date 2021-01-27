@@ -8,16 +8,79 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">   
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
 
 <script type="text/javascript">
   $(document).ready(function () {
-      $.getJSON('https://api.sheety.co/1c0174d5b32dbebdf6f1e14d6ba67a4f/ultimateAnimeShowdown/news', function (data) {
+      $.getJSON('/products.json', function (data) {
           var template = Handlebars.compile($('#item-template7').html())
           $('#menu').html(template(data.products))
       })
   })
 </script>
+
+
+<script id="item-template7" type="text/x-handlebars-template">
+
+
+  
+    {{#each this}}
+    
+
+   
+<div class="menu-container">
+    <div class="left-menu" style="float:{{align}}">
+
+        <div  class="parallax-window{{id}} menu-img" data-parallax="scroll" data-image-src="/path/to/image.jpg"></div>
+
+<div class="left-menu-text">
+<img src="Assets/logo first text.png">
+<h2>{{name}}</h2>
+</div>
+    </div> 
+    <div class="right-menu">
+        <div class="price-item active-open top">
+            <div class="popular active">
+                <img onload="$('.parallax-window{{id}}').parallax({imageSrc: '{{imageLink}}'});" src="Assets/popular.png">
+            </div>   
+            <h3>2lb {{name}} Bag</h3>
+            <p>{{briefDescription}}</p>
+            <h5>$00.00</h5>
+        </div>
+
+        <div class="price-item top">
+            <div class="popular">
+                <img src="Assets/popular.png">
+            </div>   
+            <h3>6lb {{name}} Bag</h3>
+            <p>{{briefDescription}}</p>
+            <h5>$00.00</h5>
+        </div>
+
+        <div class="price-item">
+            <div class="popular">
+                <img src="Assets/popular.png">
+            </div>   
+            <h3>10lb {{name}} Bag</h3>
+            <p>{{briefDescription}}</p>
+            <h5>$00.00</h5>
+        </div>
+
+        <div class="price-item">
+            <div class="popular">
+                <img src="Assets/popular.png">
+            </div>   
+            <h3>12lb {{name}} Bag</h3>
+            <p>{{briefDescription}}</p>
+            <h5>$00.00</h5>
+        </div>
+    </div>  
+</div>
+
+    {{/each}}
+    
+    </script>
 </head>
 <body>
     <header>
@@ -67,57 +130,12 @@
         <img class="banner" src="Assets/shrimp.png">
     </header>
 
-    <div class="menu">
+    <div class="menu" id="menu">
 
 
-<div class="menu-container">
-    <div class="left-menu">
-<img src="Assets/shrimp image.png">
-<div class="left-menu-text">
-<img src="Assets/logo first text.png">
-<h2>SHRIMP</h2>
-</div>
-    </div> 
-    <div class="right-menu">
-        <div class="price-item active-open">
-            <div class="popular active">
-                <img src="Assets/popular.png">
-            </div>   
-            <h3>Placeholder Text</h3>
-            <p>Lorem ipsum dolor sit amet, </p>
-            <h5>$00.00</h5>
-        </div>
-
-        <div class="price-item">
-            <div class="popular">
-                <img src="Assets/popular.png">
-            </div>   
-            <h3>Placeholder Text</h3>
-            <p>Lorem ipsum dolor sit amet, </p>
-            <h5>$00.00</h5>
-        </div>
-
-        <div class="price-item">
-            <div class="popular">
-                <img src="Assets/popular.png">
-            </div>   
-            <h3>Placeholder Text</h3>
-            <p>Lorem ipsum dolor sit amet, </p>
-            <h5>$00.00</h5>
-        </div>
-
-        <div class="price-item">
-            <div class="popular">
-                <img src="Assets/popular.png">
-            </div>   
-            <h3>Placeholder Text</h3>
-            <p>Lorem ipsum dolor sit amet, </p>
-            <h5>$00.00</h5>
-        </div>
-    </div>  
-</div>
 
 
     </div>
+    <script src="/parallax.js"></script>
 </body>
 </html>
