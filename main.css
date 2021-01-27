@@ -105,3 +105,11 @@ header {height: 60vh;}
     }
 
     .top {margin-top: -12px;position: relative;}
+
+    .vertical-bar {    width: 6px;
+        height: 217px;
+        background-color: #487ABE;
+        float: right;
+        position: absolute;
+    
+        margin-top: -282px;}
