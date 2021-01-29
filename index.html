@@ -37,7 +37,7 @@
     
       {{#each this}}
       
-<div id="wrap{{id}}" class="product-item vivify popIn">
+<div id="wrap{{id}}" class="product-item vivify fadeIn delay-{{id}}00">
     <img src="{{imageLink}}">
     <div id="productL{{id}}" class="product-text">
         <h3>{{name}} <span id="PoundValue{{id}}"></span></h3>
@@ -243,7 +243,7 @@ document.getElementById('bagTotal').innerHTML = parseInt(localStorage.getItem("s
 
     </div>
 
-    <div id="orderPanel" class="order-panel vivify fadeInRight">
+    <div id="orderPanel" class="order-panel vivify fadeInRight duration-400">
         <div class="order-data">
 
 
@@ -283,11 +283,21 @@ document.getElementById('bagTotal').innerHTML = parseInt(localStorage.getItem("s
         </div>
     </div>
 
-    <button class="fab" onclick="openFab()"><img src="Assets/fab.svg"></button>
+    <button id="openFab" class="fab" onclick="openFab()"><img id="fabIcon" src="Assets/fab.svg"></button>
+
+    <button id="closeFab" class="fab" onclick="closeFab()"><img id="fabIcon" src="Assets/fab close.svg"></button>
 
     <script>
         function openFab(){
             document.getElementById('orderPanel').style.display = 'block';
+          document.getElementById('openFab').style.display="none";
+          document.getElementById('closeFab').style.display="block";
+        }
+
+        function closeFab(){
+            document.getElementById('orderPanel').style.display = 'none';
+          document.getElementById('openFab').style.display="block";
+          document.getElementById('closeFab').style.display="none";
         }
     </script>
 

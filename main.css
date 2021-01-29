@@ -178,6 +178,8 @@ header {height: 60vh;}
 
     .fab > img {width: 100%;}
 
+    #closeFab {display: none;}
+
 /*----------------------------------------Media Queries------------------------------------*/
 
         @media screen and (max-width: 1440px){
@@ -212,6 +214,8 @@ header {height: 184px;}
         }
 
         @media screen and (max-width: 700px){
+.order-data {width: 90%;}
+            .order-panel{width: 100%;}
             .menu-container {width: 96%;}
             .right-menu {margin-left: 0px; width: 100%;}
            
