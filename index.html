@@ -96,7 +96,7 @@
             <p>{{briefDescription}}</p>
             <h5 id="price1{{id}}">$00.00</h5>
             <div class="bagButton">
-                <button onclick="addToBag(2, {{id}}, {{pricePerPound}} );" class="addBag">Add To Bag</button>
+                <button onclick="addToBag(2, {{id}}, {{pricePerPound}}, '{{name}}' );" class="addBag">Add To Bag</button>
             </div>
         </div>
 
@@ -108,7 +108,7 @@
             <p>{{briefDescription}}</p>
             <h5 id="price2{{id}}">$00.00</h5>
             <div class="bagButton">
-                <button onclick="addToBag(6, {{id}}, {{pricePerPound}} );" class="addBag">Add To Bag</button>
+                <button onclick="addToBag(6, {{id}}, {{pricePerPound}}, '{{name}}' );" class="addBag">Add To Bag</button>
             </div>
         </div>
 
@@ -120,7 +120,7 @@
             <p>{{briefDescription}}</p>
             <h5 id="price3{{id}}">$00.00</h5>                                                             
             <div class="bagButton">
-                <button onclick="addToBag(10, {{id}}, {{pricePerPound}} );" class="addBag">Add To Bag</button>
+                <button onclick="addToBag(10, {{id}}, {{pricePerPound}}, '{{name}}' );" class="addBag">Add To Bag</button>
             </div>
         </div>
 
@@ -132,7 +132,7 @@
             <p>{{briefDescription}}</p>
             <h5 id="price4{{id}}">$00.00</h5>
             <div class="bagButton">
-                <button onclick="addToBag(12, {{id}}, {{pricePerPound}} );" class="addBag">Add To Bag</button>
+                <button onclick="addToBag(12, {{id}}, {{pricePerPound}}, '{{name}}' );" class="addBag">Add To Bag</button>
             </div>
            
         </div>
@@ -146,7 +146,7 @@
     </script>
    
     <script>
-        function addToBag(itemCount, idNumber, ppp){
+        function addToBag(itemCount, idNumber, ppp, itemName){
 
             localStorage.setItem('priceAmount' + idNumber, parseInt(localStorage.getItem('priceAmount' + idNumber)) + ppp * itemCount);
 document.getElementById("PriceValue" + idNumber).innerHTML = localStorage.getItem('priceAmount' + idNumber);
@@ -155,6 +155,16 @@ localStorage.setItem("subTotal", parseInt(localStorage.getItem("subTotal")) + pp
 localStorage.setItem("OpenStatus" + idNumber, "open");
 document.getElementById('subTotal').innerHTML = localStorage.getItem("subTotal") + ".00";
 document.getElementById('bagTotal').innerHTML = parseInt(localStorage.getItem("subTotal")) + parseInt(localStorage.getItem("subTotal")) * 0.07;
+
+document.getElementById('itemNamePop').innerHTML = itemName;
+document.getElementById('itemPricePop').innerHTML = ppp * itemCount + ".00";
+
+document.getElementById("added").style.display = 'block';
+setTimeout(function(){
+    document.getElementById("added").style.display = 'none';
+} ,2500)
+
+
         }
 
         function clearBag (idNumberC, ppp){
@@ -281,6 +291,11 @@ document.getElementById('bagTotal').innerHTML = parseInt(localStorage.getItem("s
 <button class="checkout">Checkout</button>
 
         </div>
+    </div>
+
+    <div id="added" class="added vivify fadeInRight duration-400">
+        <h3>Added <span id="itemNamePop">Null</span> To Bag</h3>
+        <p>$ <span id="itemPricePop"></span></p>
     </div>
 
     <button id="openFab" class="fab" onclick="openFab()"><img id="fabIcon" src="Assets/fab.svg"></button>

@@ -174,11 +174,31 @@ header {height: 60vh;}
 
     .checkout {width: 100%; font-size: 15px; color: white; background-color: #487ABE;border-top-left-radius: none; font-weight: 600;padding-top: 10px;padding-bottom: 10px;border: none;margin-top: 20px;cursor: pointer;}
 
-    .fab {position: fixed; bottom: 20px; right: 20px;z-index: 150;background-color: transparent; border: none;cursor: pointer;}
+    .fab {position: fixed; bottom: 10px; right: 10px;z-index: 150;background-color: transparent; border: none;cursor: pointer;}
 
     .fab > img {width: 100%;}
 
     #closeFab {display: none;}
+
+    .added {position: fixed;
+        right: 0px;
+        bottom: 0px;
+        width: fit-content;
+        height: 89px;
+        background-color: #2e578f;
+        padding-right: 189px;
+        webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.18);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.18);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.18);
+    }
+
+    .added > h3 {margin-top: 20px;
+        margin-left: 20px;color: white;}
+
+    .added > p {margin-top: 0px;
+        margin-left: 20px;color: white;}
+
+        #added {display: none;}
 
 /*----------------------------------------Media Queries------------------------------------*/
 
@@ -233,4 +253,7 @@ header {height: 184px;}
             .price-item > h5 {margin-top: 6px;}
             
             .left-menu-text > img {width: 70px;}
+
+            .added > h3 {font-size: 15px;}
+            .added {bottom: -2px;}
         }
