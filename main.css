@@ -63,9 +63,9 @@ header {height: 60vh;}
     margin-bottom: 29px;;
 }
 
-.left-menu-text > img {width: 70px;margin-bottom: -9px;margin-top: 70px;margin-left: 30px;}
+.left-menu-text > img {width: 100px;margin-bottom: -9px;margin-top: 70px;margin-left: 30px;}
 
-.left-menu-text > h2 {font-size: 32px;color: white;font-weight: 600;margin-left: 30px;text-transform: uppercase;}
+.left-menu-text > h2 {font-size: 41px;color: white;font-weight: 600;margin-left: 30px;text-transform: uppercase;}
 
 .left-menu > img {}
 
@@ -113,6 +113,73 @@ header {height: 60vh;}
         position: absolute;
     
         margin-top: -282px;}
+
+        .addBag {background-color: white;border: solid 1px lightgray;color: black;width: 150px;padding-top: 5px;padding-bottom: 5px;cursor: pointer;}
+
+        .bagButton {margin: auto; width: fit-content;}
+
+        .price-item:hover ~ .bagButton {background: green;;}
+
+
+/*---------------------------------------Order Panel---------------------------------------*/
+
+.order-panel {position: fixed; right: 0px; z-index: 150;right: 0px; top: 0px;width: 370px;background-color: white;height: 100vh;webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.28);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.28);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.28);display: none;}
+
+    .order-top > p {font-size: 12px;text-align: center;margin-top: 10px;}
+
+    .order-data {margin: auto; width: 83%;}
+
+    .order-number > h3 {text-align: center;    font-size: 12px;
+        font-weight: normal;
+        margin-bottom: 0px;}
+
+    .order-number > h2 {text-align: center;font-size: 32px;margin-top: -6px;}
+
+    .order-number {background-color: #F8F8F8;padding-top: 5px; padding-bottom: 5px;border-radius: 7px;}
+
+    .order-number-wrapper {margin: auto; width: 153px;margin-top: 80px;}
+
+    .order-mid {border-top: solid 1px rgb(233, 233, 233);padding-top: 12px;margin-top: 12px;}
+
+.order-mid > p {text-align: center;font-size: 13px;}
+
+.order-mid > h3 {text-align: center; font-size: 24px;}
+
+.product-item {margin-top:6px;display: none;}
+
+.product-item > img {width: 103px; height: 60px; object-fit: cover;}
+
+.product-text {display: inline-block;    margin-top: 10px;
+    vertical-align: top;
+    margin-left: 10px;}
+
+.cancel {float: right;color:rgb(167, 167, 167);padding: 15px;cursor: pointer;margin-top: 7px;}
+
+.cancel:hover {color: rgb(192, 0, 0);}
+
+.product-text > h3 {font-size: 15px;}
+
+.product-text > p {font-size: 14px;}
+
+.order-price > h2 {font-size: 18px;}
+
+.subPrice {font-size: 14px;}
+
+.order-price {margin-top: 10px;}
+
+.order-items {    padding-top: 33px;
+    padding-bottom: 30px;}
+
+    .checkout {width: 100%; font-size: 15px; color: white; background-color: #487ABE;border-top-left-radius: none; font-weight: 600;padding-top: 10px;padding-bottom: 10px;border: none;margin-top: 20px;cursor: pointer;}
+
+    .fab {position: fixed; bottom: 20px; right: 20px;z-index: 150;background-color: transparent; border: none;cursor: pointer;}
+
+    .fab > img {width: 100%;}
+
+/*----------------------------------------Media Queries------------------------------------*/
+
         @media screen and (max-width: 1440px){
 .nav-list {display: none;}
 .pane-wrapper {width: 100%; margin-top: 0px;height: 60vh;}
@@ -155,11 +222,11 @@ header {height: 184px;}
             .menu-img {height: 224px;}
 
             .left-menu-text {width: fit-content;height: 100px;margin-top: -223px;margin-left: 15px;}
-            .left-menu-text > h2 {margin-left: 15px;padding-right: 48px;}
+            .left-menu-text > h2 {margin-left: 15px;padding-right: 48px;font-size: 32px;}
             .left-menu-text > img {margin-left: 15px;margin-top: 19px;}
             .price-item {width: 100%; margin-left: 0px;padding-top: 0px !important;margin-bottom: 16px;}
             .active-open {padding-top: 8px !important;margin-bottom: 43px;}
             .price-item > h5 {margin-top: 6px;}
             
-
+            .left-menu-text > img {width: 70px;}
         }

@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DeanO's Seafood</title>
     <link rel="stylesheet" href="main.css">
+    <link rel="shortcut icon" href="assets/Favicon.png">
+    <link rel="stylesheet" href="vivify.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">   
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
@@ -14,6 +18,47 @@
 <script>
     AOS.init();
   </script>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.getJSON('/products.json', function (data) {
+            var template = Handlebars.compile($('#item-template6').html())
+            $('#items').html(template(data.products))
+        })
+    })
+  </script>
+  
+  
+  <script id="item-template6" type="text/x-handlebars-template">
+  
+  
+    
+      {{#each this}}
+      
+<div id="wrap{{id}}" class="product-item vivify popIn">
+    <img src="{{imageLink}}">
+    <div id="productL{{id}}" class="product-text">
+        <h3>{{name}} <span id="PoundValue{{id}}"></span></h3>
+        <p>$<span id="PriceValue{{id}}">00.00</span></p>
+    </div>
+
+   <i onclick="clearBag({{id}}, {{price}})" class="material-icons cancel">cancel</i>
+    </div>
+  
+      {{/each}}
+
+
+
+      
+      </script>
+
+
+
+<!--------------------------------Menu Items----------------------------------->
+
+
 <script type="text/javascript">
   $(document).ready(function () {
       $.getJSON('/products.json', function (data) {
@@ -45,11 +90,14 @@
     <div class="right-menu">
         <div class="price-item active-open top">
             <div class="popular active">
-                <img onload="document.getElementById('price1{{id}}').innerHTML='$' + parseInt({{pricePerPound}}) * 2 + '.00';document.getElementById('price2{{id}}').innerHTML='$' + parseInt({{pricePerPound}}) * 6 + '.00';document.getElementById('price3{{id}}').innerHTML='$' + parseInt({{pricePerPound}}) * 10 + '.00';document.getElementById('price4{{id}}').innerHTML='$' + parseInt({{pricePerPound}}) * 12 + '.00';" src="Assets/popular.png">
+                <img onload="document.getElementById('price1{{id}}').innerHTML='$' + parseInt({{pricePerPound}}) * 2 + '.00';document.getElementById('price2{{id}}').innerHTML='$' + parseInt({{pricePerPound}}) * 6 + '.00';document.getElementById('price3{{id}}').innerHTML='$' + parseInt({{pricePerPound}}) * 10 + '.00';document.getElementById('price4{{id}}').innerHTML='$' + parseInt({{pricePerPound}}) * 12 + '.00';setLocalPrice('priceAmount{{id}}', '{{id}}');" src="Assets/popular.png">
             </div>   
-            <h3>2lb {{name}} Bag</h3>
+            <h3>2lb {{name}} Bag</h3>              
             <p>{{briefDescription}}</p>
             <h5 id="price1{{id}}">$00.00</h5>
+            <div class="bagButton">
+                <button onclick="addToBag(2, {{id}}, {{pricePerPound}} );" class="addBag">Add To Bag</button>
+            </div>
         </div>
 
         <div class="price-item top">
@@ -59,6 +107,9 @@
             <h3>6lb {{name}} Bag</h3>
             <p>{{briefDescription}}</p>
             <h5 id="price2{{id}}">$00.00</h5>
+            <div class="bagButton">
+                <button onclick="addToBag(6, {{id}}, {{pricePerPound}} );" class="addBag">Add To Bag</button>
+            </div>
         </div>
 
         <div class="price-item">
@@ -67,7 +118,10 @@
             </div>   
             <h3>10lb {{name}} Bag</h3>
             <p>{{briefDescription}}</p>
-            <h5 id="price3{{id}}">$00.00</h5>
+            <h5 id="price3{{id}}">$00.00</h5>                                                             
+            <div class="bagButton">
+                <button onclick="addToBag(10, {{id}}, {{pricePerPound}} );" class="addBag">Add To Bag</button>
+            </div>
         </div>
 
         <div class="price-item">
@@ -77,6 +131,10 @@
             <h3>12lb {{name}} Bag</h3>
             <p>{{briefDescription}}</p>
             <h5 id="price4{{id}}">$00.00</h5>
+            <div class="bagButton">
+                <button onclick="addToBag(12, {{id}}, {{pricePerPound}} );" class="addBag">Add To Bag</button>
+            </div>
+           
         </div>
 
         <div class="vertical-bar" style="    margin-{{align}}: 744px;"></div>
@@ -86,6 +144,47 @@
     {{/each}}
     
     </script>
+   
+    <script>
+        function addToBag(itemCount, idNumber, ppp){
+
+            localStorage.setItem('priceAmount' + idNumber, parseInt(localStorage.getItem('priceAmount' + idNumber)) + ppp * itemCount);
+document.getElementById("PriceValue" + idNumber).innerHTML = localStorage.getItem('priceAmount' + idNumber);
+document.getElementById("wrap" + idNumber).style.display="block";
+localStorage.setItem("subTotal", parseInt(localStorage.getItem("subTotal")) + ppp * itemCount);
+localStorage.setItem("OpenStatus" + idNumber, "open");
+document.getElementById('subTotal').innerHTML = localStorage.getItem("subTotal") + ".00";
+document.getElementById('bagTotal').innerHTML = parseInt(localStorage.getItem("subTotal")) + parseInt(localStorage.getItem("subTotal")) * 0.07;
+        }
+
+        function clearBag (idNumberC, ppp){
+document.getElementById("wrap" + idNumberC).style.display="none";
+localStorage.setItem('priceAmount' + idNumberC, "0");
+localStorage.setItem("subTotal", parseInt(localStorage.getItem("subTotal")) - parseInt(document.getElementById('PriceValue'+ idNumberC).innerHTML) );
+localStorage.setItem("OpenStatus" + idNumberC, "close");
+document.getElementById('subTotal').innerHTML = localStorage.getItem("subTotal") + ".00";
+document.getElementById('bagTotal').innerHTML = parseInt(localStorage.getItem("subTotal")) + parseInt(localStorage.getItem("subTotal")) * 0.07;
+        }
+
+
+        function setLocalPrice(nameOfPrice ,idNumberA){
+            if(localStorage.getItem('newUser') == 'false'){
+                document.getElementById('subTotal').innerHTML = localStorage.getItem("subTotal") + ".00";
+                document.getElementById('PriceValue' + idNumberA).innerHTML = localStorage.getItem('priceAmount' + idNumberA);
+                document.getElementById('bagTotal').innerHTML = parseInt(localStorage.getItem("subTotal")) + parseInt(localStorage.getItem("subTotal")) * 0.07;
+                if(localStorage.getItem("OpenStatus" + idNumberA) == "open"){
+                    document.getElementById("wrap" + idNumberA).style.display="block";
+                }else{
+                    document.getElementById("wrap" + idNumberA).style.display="none";
+                }
+            
+}else{
+ localStorage.setItem(nameOfPrice, '0');
+ localStorage.setItem( "subTotal" , "0")
+}
+     }
+    </script>
+    
 </head>
 <body>
     <header >
@@ -143,7 +242,56 @@
 
 
     </div>
+
+    <div id="orderPanel" class="order-panel vivify fadeInRight">
+        <div class="order-data">
+
+
+<div class="order-top">
+
+    <div class="order-number-wrapper">
+        <div class="order-number">
+            <h3>Order Number</h3>
+            <h2 id="orderNumber">000000</h2>
+                </div>
+    </div>
  
+<p>This code will be used to verify your order when you arrive. No need to remember it, we’ll keep it here until your next order.</p>
+</div>
+
+
+<div class="order-mid">
+<p>Vicksburg Thursday 12am - 4pm
+</p>
+<h3>Order For Pickup</h3>
+</div>
+
+
+<div class="order-items">
+    <div id="items">
+
+    </div>
+</div>
+
+<div class="order-price">
+    <p class="subPrice">Subtotal $<span id="subTotal"></span></p>
+    <h2 class="totalPrice">Total $<span id="bagTotal"></span></h2>
+</div>
+
+<button class="checkout">Checkout</button>
+
+        </div>
+    </div>
+
+    <button class="fab" onclick="openFab()"><img src="Assets/fab.svg"></button>
+
+    <script>
+        function openFab(){
+            document.getElementById('orderPanel').style.display = 'block';
+        }
+    </script>
+
     <script src="/parallax.js"></script>
+    <script src="orderHandler.js"></script>
 </body>
 </html>
