@@ -4,9 +4,19 @@
         "id": "1",
         "name": "Shrimp",
         "pricePerPound": "6",
-        "imageLink": "https://previews.123rf.com/images/morgancapasso12/morgancapasso121705/morgancapasso12170500020/77512541-close-up-of-fresh-whole-raw-shrimp-or-prawns-on-display-in-fish-market.jpg",
+        "imageLink": "assets/shrimp image.png",
         "align": "left",
         "briefDescription": "Peel and Eat Quality Gulf Shrimp"
+       
+      },
+
+      {
+        "id": "3",
+        "name": "Red Fish",
+        "pricePerPound": "8.79",
+        "imageLink": "https://www.sportfishingmag.com/resizer/TK4c9XojoB0BJjWwWmfIYdsgBOM=/1200x628/smart/arc-anglerfish-arc2-prod-bonnier.s3.amazonaws.com/public/IZBYFDJBES3M5QUSJE7DCEMU5E.jpg",
+        "align": "right",
+        "briefDescription": "Crisy and Fresh Gulf Red Fish"
        
       },
 
@@ -15,20 +25,12 @@
         "name": "Flounder",
         "pricePerPound": "6",
         "imageLink": "https://envato-shoebox-0.imgix.net/d999/f5c7-ce0c-4a79-a50e-31a87dd136d7/IMG_9402.JPG?auto=compress%2Cformat&fit=max&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&markalign=center%2Cmiddle&markalpha=18&w=1600&s=5c695abec4c27e0d44ef224da559ba80",
-        "align": "right",
+        "align": "left",
         "briefDescription": "Flackey and Fresh Gulf Flounder"
        
-      },
-
-      {
-        "id": "3",
-        "name": "Red Fish",
-        "pricePerPound": "6",
-        "imageLink": "https://www.sportfishingmag.com/resizer/TK4c9XojoB0BJjWwWmfIYdsgBOM=/1200x628/smart/arc-anglerfish-arc2-prod-bonnier.s3.amazonaws.com/public/IZBYFDJBES3M5QUSJE7DCEMU5E.jpg",
-        "align": "left",
-        "briefDescription": "Crisy and Fresh Gulf Red Fish"
-       
       }
+
+     
     
     ]
   }
