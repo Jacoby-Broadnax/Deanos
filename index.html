@@ -38,7 +38,7 @@
       {{#each this}}
       
 <div id="wrap{{id}}" class="product-item vivify fadeIn delay-{{id}}00">
-    <img src="{{imageLink}}">
+    <img loading="lazy" src="{{imageLink}}">
     <div id="productL{{id}}" class="product-text">
         <h3>{{name}} <span id="PoundValue{{id}}"></span></h3>
         <p>$<span id="PriceValue{{id}}">00.00</span></p>
@@ -80,10 +80,10 @@
 <div class="menu-container">
     <div class="left-menu" style="float:{{align}}">
 
-     <img class="menu-img" src="{{imageLink}}">
+     <img loading="lazy" class="menu-img" src="{{imageLink}}">
 
 <div  class="left-menu-text">
-<img  src="Assets/logo first text.png">
+<img loading="lazy" src="Assets/logo first text.png">
 <h2>{{name}}</h2>
 </div>
     </div> 
@@ -102,7 +102,7 @@
 
         <div class="price-item top">
             <div  class="popular">
-                <img src="Assets/popular.png">
+                <img loading="lazy" src="Assets/popular.png">
             </div>   
             <h3>6lb {{name}} Bag</h3>
             <p>{{briefDescription}}</p>
@@ -114,7 +114,7 @@
 
         <div class="price-item">
             <div class="popular">
-                <img src="Assets/popular.png">
+                <img loading="lazy" src="Assets/popular.png">
             </div>   
             <h3>10lb {{name}} Bag</h3>
             <p>{{briefDescription}}</p>
@@ -126,7 +126,7 @@
 
         <div class="price-item">
             <div class="popular">
-                <img src="Assets/popular.png">
+                <img loading="lazy" src="Assets/popular.png">
             </div>   
             <h3>12lb {{name}} Bag</h3>
             <p>{{briefDescription}}</p>
@@ -248,7 +248,7 @@ document.getElementById('bagTotal').innerHTML = parseInt(localStorage.getItem("s
             </div>
         </div>
         
-        <img class="banner" src="Assets/shrimp.png">
+        <img class="banner" src="Assets/shrimp.jpg">
     </header>
 
     <div class="menu" id="menu">
