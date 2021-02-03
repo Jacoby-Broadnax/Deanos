@@ -496,6 +496,8 @@ header {
 
 @media screen and (max-width: 1440px) {
 
+    .social > p {padding-left: 34px;}
+
     .menu {padding-top: 0px;}
 
   .nav-list {
