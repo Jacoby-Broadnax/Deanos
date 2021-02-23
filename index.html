@@ -95,7 +95,7 @@
     <div class="right-menu">
         <div class="price-item active-open top">
             <div class="popular active">
-                <img onload="document.getElementById('price1{{id}}').innerHTML='$' + parseInt({{pricePerPound}}) * 2 + '.00';document.getElementById('price2{{id}}').innerHTML='$' + parseInt({{pricePerPound}}) * 6 + '.00';document.getElementById('price3{{id}}').innerHTML='$' + parseInt({{pricePerPound}}) * 10 + '.00';document.getElementById('price4{{id}}').innerHTML='$' + parseInt({{pricePerPound}}) * 12 + '.00';setLocalPrice('priceAmount{{id}}', '{{id}}');" src="Assets/popular.png">
+                <img onload="document.getElementById('price1{{id}}').innerHTML='$' + parseInt({{price}}) * 2 + '.00';document.getElementById('price2{{id}}').innerHTML='$' + parseInt({{pricePerPound}}) * 6 + '.00';document.getElementById('price3{{id}}').innerHTML='$' + parseInt({{pricePerPound}}) * 10 + '.00';document.getElementById('price4{{id}}').innerHTML='$' + parseInt({{pricePerPound}}) * 12 + '.00';setLocalPrice('priceAmount{{id}}', '{{id}}');" src="Assets/popular.png">
             </div>   
             <h3>2lb {{name}} Bag</h3>              
             <p>{{briefDescription}}</p>
@@ -103,7 +103,7 @@
             <div class="bagButton">
                 <button  class="snipcart-add-item addBag"
                 data-item-id="{{name}}{{id}}"
-                data-item-price="{{pricePerPound}}"
+                data-item-price="{{price}}"
                 data-item-url="/"
                 data-item-description="{{briefDescription}}"
                 data-item-image="{{image}}"
